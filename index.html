@@ -17,6 +17,33 @@
   <body class="bg-white text-[#1a1a1a] antialiased selection:bg-[#1a1a1a] selection:text-white">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script type="module">
+      window.addEventListener('error', function(e) {
+        if (e.filename && e.filename.includes('main.tsx') || (e.target && e.target.src && e.target.src.includes('main.tsx'))) {
+          loadStaticBundle();
+        }
+      }, true);
+
+      setTimeout(function() {
+        const root = document.getElementById('root');
+        if (root && root.children.length === 0) {
+          loadStaticBundle();
+        }
+      }, 400);
+
+      function loadStaticBundle() {
+        if (!window.__staticBundleLoaded) {
+          window.__staticBundleLoaded = true;
+          if (!document.querySelector('link[href*="index-DKANpaiq.css"]')) {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = './assets/index-DKANpaiq.css';
+            document.head.appendChild(link);
+          }
+          import('./assets/index-CAuU3sO1.js');
+        }
+      }
+    </script>
   </body>
 </html>
 
