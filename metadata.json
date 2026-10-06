@@ -1,0 +1,6 @@
+{
+  "name": "Lumerah — Luxury Fashion & Handbags",
+  "description": "Discover elegant handcrafted leather handbags, luxury totes, designer clutches, and accessories with nationwide cash on delivery.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
